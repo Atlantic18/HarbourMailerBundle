@@ -1,0 +1,23 @@
+{
+    "status": "ok",
+    "id": 1,
+    "name": "Config Mailer",
+    "slug": "config-mailer",
+    "sections": [
+        {
+            "name": "body",
+            "items": [
+                {
+                    "permid": "abc123",
+                    "content": "Here is some text content",
+                    "renderer": "markdown"
+                },
+                {
+                    "permid": "abc234",
+                    "content": "{ \"transactional\": [ { \"name\": \"trans_sg_ormd\", \"username\": \"null_username\", \"password\": \"securepassword\", \"driver\": \"null\", \"limit\": \"1d\" }, { \"name\": \"trans_sg_a18\", \"username\": \"null_username\", \"password\": \"securepassword\", \"driver\":   \"null\", \"limit\":    \"1m\" } ], \"marketing\": [ { \"name\":     \"mark_md_ormd\", \"username\": \"null_username\", \"password\": \"securepassword\", \"driver\":   \"null\", \"limit\":    \"1m\" }, { \"name\":     \"mark_md_a18\", \"username\": \"null_username\", \"password\": \"securepassword\", \"driver\":   \"null\", \"limit\":    \"3d\" } ] }",
+                    "renderer": "json"
+                }
+            ]
+        }
+    ]
+}
