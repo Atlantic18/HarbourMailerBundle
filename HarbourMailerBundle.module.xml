@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<orm-designer version="2.3.0.826" mvc="Symfony2" orm="Doctrine2">
+  <module name="MailerBundle" import-format="Doctrine2Php" import-path="Entity" uuid="c6e54feb-78cd-4975-a2bb-cb9283a86605">
+    <entity name="Email" uuid="19aef967-6385-4d75-9680-2a3624202275">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="8d2b8472-db54-4e97-bfea-db65741ddf38"/>
+      <field name="subject" type="string" size="64" required="true" uuid="2f224f07-2c54-4754-ae0d-80576e08e835"/>
+      <field name="email" type="string" size="255" required="true" uuid="7d28262b-bcdd-4989-913e-b03405cdd974"/>
+      <field name="email_group" type="string" size="32" required="true" uuid="5354c82c-c095-4671-a628-70ed8728bc1a"/>
+      <field name="channel" type="string" size="32" required="true" uuid="4b607460-545e-49d3-a951-b1adb840cbf4"/>
+      <field name="created_at" type="datetime" required="true" uuid="d7015d15-86e1-46ab-8b7b-738d2c3b124a"/>
+      <field name="account_id" type="integer" required="true" uuid="eee219fc-0d47-49b6-b4a3-844209ab58da"/>
+      <index name="ChannelCreatedAtIndex">
+        <index-field name="channel"/>
+        <index-field name="created_at"/>
+      </index>
+      <index name="ChannelIndex">
+        <index-field name="channel"/>
+      </index>
+      <index name="CreatedAtIndex">
+        <index-field name="created_at"/>
+      </index>
+      <orm-attributes>
+        <attribute name="table">harbour_email</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="Email" to="Account" caption="mailer account" inverse-alias="account" uuid="bf9157e5-8c68-465e-8e5e-a5d3d57dc132">
+      <association-field from="account_id" to="id"/>
+    </association>
+    <orm-attributes>
+      <attribute name="namespace">Harbour\MailerBundle\Entity</attribute>
+      <attribute name="filename-format">entity-name-only</attribute>
+    </orm-attributes>
+  </module>
+  <visual-data>
+    <entity uuid="19aef967-6385-4d75-9680-2a3624202275" position-x="50" position-y="50" size-x="0" size-x2="114" size-y="0" size-y2="87"/>
+    <module uuid="c6e54feb-78cd-4975-a2bb-cb9283a86605" bk-color="4294375930" position-x="625" position-y="875" size-x="0" size-x2="550" size-y="0" size-y2="225"/>
+  </visual-data>
+</orm-designer>
